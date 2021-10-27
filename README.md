@@ -48,4 +48,4 @@ npm i @judsirera/acamp-gallery
 
 ## Credits
 
-Designed by [Marija Vitasovic](https://marija.lynxdev.io/) and implemented by [Judith Sirera](http://judithsirera.com/) while working at [Acamp](https://www.acamp.com/sv)
+Designed by [Marija Vitasovic](https://marija.lynxdev.io/) and implemented by [Judith Sirera](http://judithsirera.com/) while working at [Acamp](https://www.acamp.com/)
