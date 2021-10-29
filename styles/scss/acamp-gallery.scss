@@ -1,9 +1,9 @@
-.gallerySlider {
+.gallery-slider {
   padding-left: 32px;
   padding-right: 32px;
   position: relative;
 
-  .loaderContainer {
+  .loader-container {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -31,7 +31,7 @@
     }
   }
 
-  .galleryWrapper {
+  .gallery-wrapper {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -45,7 +45,7 @@
       visibility: hidden;
     }
 
-    .imagesContainer {
+    .images-container {
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
@@ -57,7 +57,7 @@
       transform-box: fill-box;
     }
 
-    .galleryImage {
+    .gallery-image {
       height: 100%;
       background-repeat: no-repeat;
       background-size: cover;
@@ -82,7 +82,7 @@
       }
     }
 
-    .navigationButton {
+    .navigation-btn {
       display: flex;
       align-items: center;
       justify-content: center;

@@ -1,6 +1,5 @@
 import React, { createRef } from 'react';
 import classNames from 'classnames';
-import styles from './index.module.scss';
 import { ArrowLeft, ArrowRight } from './utils/arrows';
 import PropTypes from 'prop-types';
 
@@ -153,7 +152,7 @@ class GallerySlider extends React.PureComponent {
     return (
       <div
         onMouseOver={activeOnHover ? () => this.updateActiveImage(index) : null}
-        className={classNames(styles.galleryImage)}
+        className={classNames('gallery-image')}
         style={this.getImagesStyles({
           src: image,
           isActive
@@ -176,7 +175,7 @@ class GallerySlider extends React.PureComponent {
 
     return Array.from(Array(sideColumns), (_, index) => (
       <div
-        className={classNames(styles.galleryImage, styles.disabled)}
+        className={classNames('gallery-image', 'disabled')}
         style={this.getImagesStyles({
           src: image,
           isActive: false,
@@ -210,28 +209,28 @@ class GallerySlider extends React.PureComponent {
     if (images.length === 0) return null;
     return (
       <>
-        <div className={classNames(styles.gallerySlider, className)}>
+        <div className={classNames('gallery-slider', className)}>
           {loading && (
-            <div className={styles.loaderContainer}>
-              {loaderElement ?? <div className={styles.loader}>Loading...</div>}
+            <div className={'loader-container'}>
+              {loaderElement ?? <div className={'loader'}>Loading...</div>}
             </div>
           )}
           <div
-            className={classNames(styles.galleryWrapper, loading && styles.hidden)}
+            className={classNames('gallery-wrapper', loading && 'hidden')}
             style={{ height: `${height}px` }}>
             {showNavigation && (
               <div
                 className={classNames(
-                  styles.navigationButton,
+                  'navigation-btn',
                   navigation.className,
-                  activeImage === 0 && styles.disabled
+                  activeImage === 0 && 'disabled'
                 )}
                 onClick={() => this.updateActiveImage(activeImage - 1)}>
                 <ArrowLeft width={24} height={24} />
               </div>
             )}
             <div
-              className={styles.imagesContainer}
+              className={'images-container'}
               ref={this.imagesContainerRef}
               style={{
                 marginLeft: showNavigation ? 16 : null
@@ -240,7 +239,7 @@ class GallerySlider extends React.PureComponent {
               {this.getSideColumns(firstImage)}
               {images.map(this.getImages)}
               <div
-                className={classNames(styles.galleryImage, styles.disabled)}
+                className={classNames('gallery-image', 'disabled')}
                 style={this.getImagesStyles({
                   src: lastImage,
                   width: columnWidth,
@@ -252,9 +251,9 @@ class GallerySlider extends React.PureComponent {
             {showNavigation && (
               <div
                 className={classNames(
-                  styles.navigationButton,
+                  'navigation-btn',
                   navigation.className,
-                  activeImage === images.length - 1 && styles.disabled
+                  activeImage === images.length - 1 && 'disabled'
                 )}
                 style={{ marginLeft: 16 }}
                 onClick={() => this.updateActiveImage(activeImage + 1)}>

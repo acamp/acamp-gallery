@@ -27,11 +27,35 @@ npm i @judsirera/acamp-gallery
 | `navigation`    | `Boolean` or `Object` | Sets the properties for navigation. Accepts `true`, `false` or `{ className: '', showWhenOneImageOrLess: ''}`           | `true`. When there's less than one image, navigation is hidden |
 | `loaderElement` | `node`                | The node element to render when loading at start                                                                        | `null`                                                         |
 
-## Acamp Gallery Component
+## Style Import
 
 ```js
+import '@judsirera/acamp-gallery/styles/css/acamp-gallery.css';
+
+import '@judsirera/acamp-gallery/styles/scss/acamp-gallery.scss';
+```
+
+or as link in the head of your html
+
+```html
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@judsirera/acamp-gallery/styles/css/acamp-gallery.css"
+/>
+
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@judsirera/acamp-gallery/styles/scss/acamp-gallery.scss"
+/>
+```
+
+## Example
+
+```js
+const IMAGES = Array.from(Array(5), () => 'https://via.placeholder.com/300x200');
+
 <AcampGallery
-  images={[]}
+  images={IMAGES}
   height={460}
   columnGutter={20}
   columnWidth={75}
@@ -43,7 +67,7 @@ npm i @judsirera/acamp-gallery
     showWhenOneImageOrLess: false
   }}
   className='your-gallery-wrapper-classname'
-/>
+/>;
 ```
 
 ## Credits

@@ -7,6 +7,9 @@
 /example/build
 /example/node_modules
 
+#build
+/build
+
 /.pnp
 .pnp.js
 

@@ -1,5 +1,6 @@
 import './App.css';
 import AcampGallery from '@judsirera/acamp-gallery';
+import '@judsirera/acamp-gallery/styles/css/acamp-gallery.css';
 import { useState } from 'react';
 import { getImage } from './utils';
 
