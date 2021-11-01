@@ -8,7 +8,6 @@ const SWIPER_MIN_DISTANCE = 50;
 class GallerySlider extends React.PureComponent {
   swipeStart = 0;
   transition = null;
-  loader = null;
 
   constructor(props, context) {
     super(props, context);
@@ -61,25 +60,13 @@ class GallerySlider extends React.PureComponent {
   }
 
   componentDidMount() {
-    const { sideColumns, initialImage } = this.props;
-    this.loader = () => {
-      this.setState({ loading: false });
-    };
-    this.imagesContainerRef.current.children[sideColumns + initialImage].addEventListener(
-      'webkitTransitionEnd',
-      this.loader
-    );
+    this.setState({ loading: false });
     this.calculateActiveWidth(() => {
       this.calculateOffset();
     });
   }
 
   componentWillUnmount() {
-    const { sideColumns, initialImage } = this.props;
-    this.imagesContainerRef.current.children[sideColumns + initialImage].removeEventListener(
-      'webkitTransitionEnd',
-      this.loader
-    );
     clearTimeout(this.transition);
   }
 

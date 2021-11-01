@@ -1,6 +1,6 @@
 {
   "name": "@judsirera/acamp-gallery",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "An interactive slider gallery made with React",
   "main": "build/acamp-gallery.js",
   "files": [

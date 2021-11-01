@@ -1,7 +1,7 @@
 import './App.css';
 import AcampGallery from '@judsirera/acamp-gallery';
 import '@judsirera/acamp-gallery/styles/css/acamp-gallery.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getImage } from './utils';
 
 const InputField = ({ label, ...inputProps }) => {
@@ -13,13 +13,13 @@ const InputField = ({ label, ...inputProps }) => {
   );
 };
 
-const DropdownField = ({ label, opts, selected, ...dropdownProps }) => {
+const DropdownField = ({ label, opts, selectedValue, ...dropdownProps }) => {
   return (
     <div className='input-field'>
       <label className='input-field-label'>{label}</label>
       <select {...dropdownProps}>
-        {opts.map((opt) => (
-          <option value={opt} selected={selected === opt}>
+        {opts.map((opt, index) => (
+          <option value={opt} selected={selectedValue === opt} key={index}>
             {opt}
           </option>
         ))}
@@ -43,6 +43,13 @@ const App = () => {
   const [containImage, setContainImage] = useState(AcampGallery.CONTAIN_OFF);
   const [activeOnHover, setActiveOnHover] = useState(false);
   const [navigation, setNavigation] = useState(true);
+
+  useEffect(() => {
+    //mobile
+    if (window.innerWidth < 576) {
+      setSideColumns(0);
+    }
+  }, []);
 
   return (
     <div className='app'>
@@ -119,7 +126,7 @@ const App = () => {
         <DropdownField
           label='Contain Image'
           opts={CONTAIN_OPTIONS}
-          selected={containImage}
+          selectedValue={containImage}
           onChange={(event) => {
             setContainImage(CONTAIN_OPTIONS[event.target.selectedIndex]);
           }}

@@ -65,3 +65,10 @@ header {
 .gallery-slider {
   margin-top: 32px;
 }
+
+@media only screen and (max-width: 576px) {
+  .gallery-slider {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+}
